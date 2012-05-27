@@ -1,0 +1,55 @@
+diff --git a/less/variables.less b/less/variables.less
+old mode 100644
+new mode 100755
+index d8825fb..e2c8a99
+--- a/less/variables.less
++++ b/less/variables.less
+@@ -15,10 +15,9 @@
+ @grayDark:              #333;
+ @gray:                  #555;
+ @grayLight:             #999;
+-@grayLighter:           #eee;
++@grayLighter:           #D14;
+ @white:                 #fff;
+ 
+-
+ // Accent colors
+ // -------------------------
+ @blue:                  #049cdb;
+@@ -39,7 +38,7 @@
+ 
+ // Links
+ // -------------------------
+-@linkColor:             #08c;
++@linkColor:             #8C1B27;
+ @linkColorHover:        darken(@linkColor, 15%);
+ 
+ 
+@@ -47,18 +46,24 @@
+ // -------------------------
+ @sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+ @serifFontFamily:       Georgia, "Times New Roman", Times, serif;
++@serifFontFamily:       Georgia, "Times New Roman", Times, serif;
+ @monoFontFamily:        Menlo, Monaco, Consolas, "Courier New", monospace;
+ 
+-@baseFontSize:          13px;
++@baseFontSize:          1em;
+ @baseFontFamily:        @sansFontFamily;
+ @baseLineHeight:        18px;
+ @altFontFamily:         @serifFontFamily;
+ 
+-@headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
++@headingsFontFamily:    "Nunito"; // empty to use BS default, @baseFontFamily
++@headingL1FontFamily:		@headingsFontFamily;
++@headingL2FontFamily:		@headingsFontFamily;
++@headingL3FontFamily:		@headingsFontFamily;
++@headingL4FontFamily:		"Helvetica Neue", sans-serif;
++@headingL5FontFamily:		"Helvetica Neue", sans-serif;
++@headingL6FontFamily:		"Helvetica Neue", sans-serif;
+ @headingsFontWeight:    bold;    // instead of browser default, bold
+ @headingsColor:         inherit; // empty to use BS default, @textColor
+ 
+-
+ // Tables
+ // -------------------------
+ @tableBackground:                   transparent; // overall background-color
