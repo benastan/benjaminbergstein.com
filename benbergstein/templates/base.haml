@@ -4,8 +4,8 @@
 %html
 	%head
 		%link{'href':'http://fonts.googleapis.com/css?family=Nunito','type':'text/css','rel':'stylesheet'}
-		%link{'href':'/static/less/bootstrap.css','type':'text/css','rel':'stylesheet'}
-		%link{'href':'/static/css/custom.css','type':'text/css','rel':'stylesheet'}
+		%link{'href':'{{ STATIC_URL }}less/bootstrap.css','type':'text/css','rel':'stylesheet'}
+		%link{'href':'{{ STATIC_URL }}css/custom.css','type':'text/css','rel':'stylesheet'}
 		%title
 			- block title
 			: Ben Bergstein: JavaScript, Python, PHP and HTML/CSS Expert; Software Engineer.
@@ -218,10 +218,10 @@
 										&nbsp; 
 										%span.badge.badge-info
 											Harvard Metadata API
-		%script{'type':'text/javascript','src':'/static/js/jquery.js'}
-		%script{'type':'text/javascript','src':'/static/js/prettify.js'}
-		%script{'type':'text/javascript','src':'/static/js/bootstrap-button.js'}
-		%script{'type':'text/javascript','src':'/static/js/bootstrap-tab.js'}
-		%script{'type':'text/javascript','src':'/static/js/base.js'}
+		%script{'type':'text/javascript','src':'{{ STATIC_URL }}js/jquery.js'}
+		%script{'type':'text/javascript','src':'{{ STATIC_URL }}js/prettify.js'}
+		%script{'type':'text/javascript','src':'{{ STATIC_URL }}js/bootstrap-button.js'}
+		%script{'type':'text/javascript','src':'{{ STATIC_URL }}js/bootstrap-tab.js'}
+		%script{'type':'text/javascript','src':'{{ STATIC_URL }}js/base.js'}
 		- block extra-head
 

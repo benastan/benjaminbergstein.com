@@ -1,13 +1,11 @@
-html,
-#body,
-#container {
+html, #body, #container {
   background: #FFECBE;
   background: #F7F7F9;
   height: 100%;
 }
 @media (min-width: 400px) and (max-width: 680px) {
   #container {
-    font-size: 10px;
+    font-size: 8px;
   }
 }
 #branding {
@@ -47,7 +45,7 @@ html,
   margin-top: 86px;
 }
 #right-nav li p {
-  margin: 0 0 2px;
+  margin: 5px 0 5px;
   line-height: 1.3em;
 }
 #right-nav ul > li {
