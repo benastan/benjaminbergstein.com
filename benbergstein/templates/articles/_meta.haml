@@ -1,0 +1,10 @@
+- load i18n humanize
+.article-meta
+	- if article.get_previous_article
+		%p.pull-left
+			%a{'href':'{{ article.get_previous_article.get_absolute_url }}'}
+				&larr; {{ article.get_previous_article.title }}
+	- if article.get_next_article
+		%p.pull-right
+			%a{'href':'{{ article.get_next_article.get_absolute_url }}'}
+				{{ article.get_next_article.title }} &rarr;

@@ -1,0 +1,18 @@
+- load i18n humanize
+%li
+	%h2.title
+		%a{'href':'{{ article.get_absolute_url }}','title':'{{ article.title }}'}
+			{{ article.title }}
+	.article-meta
+		%h6.pull-left
+			{{ article.publish_date|naturalday }}
+		&nbsp;by 
+		%em.author
+			%a{'href':'{% url articles_by_author article.author.username %}'}
+				{{ article.author.username }}
+	.article-content
+		{{ article.teaser|safe }}
+		%a{'href':'{{ article.get_absolute_url }}'}
+			Read more &rarr;
+
+	- include 'articles/tags.html' with tags=article.tags.all

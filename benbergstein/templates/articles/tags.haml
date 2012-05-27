@@ -1,0 +1,5 @@
+.badges
+	- for tag in tags
+		%a.badge.badge-info{'href':'{% url articles_display_tag tag %}'}
+			{{ tag }}
+		&nbsp;

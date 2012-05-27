@@ -1,0 +1,114 @@
+html, #body, #container
+{
+	background: #FFECBE;
+	background: #F7F7F9;
+	height: 100%;
+}
+
+@media (min-width: 400px) and (max-width: 680px) {
+	#container
+	{
+		font-size: 8px;
+	}
+}
+
+#branding
+{
+	position: fixed;
+	top: 0px;
+	padding: 50px 0 0 0;
+	background: #8C1B27;
+	min-height: 100%;
+	height: 100%;
+	border-right: 1px dashed #333;
+	color: #F2D89B;
+	box-shadow: -6px 0px 16px 6px #211111; 
+	
+	.row-fluid
+	{
+		margin: 10px 0;
+	}
+
+	h1
+	{
+		font-family: 'Nunito', Helvetica Neue;
+		font-size: 2.5em;
+		line-height: 1.2em;
+		text-shadow: 1px 1px 3px #211E15;
+		color: white;
+	}	
+}
+
+#skills li
+{
+	padding: 4px 0 4px 8px;
+	margin: 0 0 0 3px;
+	border-left: 2px solid #F2D89B;
+}
+
+#page-content
+{
+	margin-left: 23.5%;
+	padding: 5px 50px 30px; 
+}
+
+#article-content h2.title
+{
+	display: none;
+}
+
+#right-nav
+{
+	margin-top: 86px;
+
+	li p
+	{
+		margin: 0 0 2px;
+		line-height: 1.3em;
+	}
+
+	ul > li
+	{
+		margin: 5px 0 15px;
+		padding-bottom: 7px;
+		border-bottom: 2px solid #EEE;
+		ul > li
+		{
+			margin: 0;
+			padding-bottom: 0;
+			border-bottom: none;
+		}
+	}
+
+	.while-at
+	{
+		color: #AAA;
+		font-variant: small-caps;
+	}
+}
+
+pre.prettyprint
+{
+	box-shadow: inset 0px 0px 11px -4px #333;
+	padding: 0 0 0 3px;
+
+	ol.linenums
+	{
+		padding: 7px 6px;
+		background: #EEE;
+		border-radius: 4px;
+		box-shadow: inset 0 0 10px -1px #999;
+	}
+
+	.kwd { color: #009; }
+	.pln { color: #333; }
+	.pun { color: #900; }
+	.str { color: #999; }
+}
+
+.articles-list li
+{
+	border-bottom: 2px solid #EEE;
+	padding-bottom: 10px;
+	margin-bottom: 15px;
+}

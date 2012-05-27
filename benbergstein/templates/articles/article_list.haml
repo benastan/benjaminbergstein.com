@@ -1,0 +1,13 @@
+- extends 'base.html'
+
+- load i18n
+
+- block title
+	- trans 'Latest Posts'
+
+{{ paginator.num_pages }}
+
+- block content
+	%ul.unstyled.articles-list
+		- for article in page_obj.object_list
+			- include 'articles/_articles.html'

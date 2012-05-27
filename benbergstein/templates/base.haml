@@ -1,0 +1,227 @@
+- load article_tags
+- load humanize
+!!! 5
+%html
+	%head
+		%link{'href':'http://fonts.googleapis.com/css?family=Nunito','type':'text/css','rel':'stylesheet'}
+		%link{'href':'/static/less/bootstrap.css','type':'text/css','rel':'stylesheet'}
+		%link{'href':'/static/css/custom.css','type':'text/css','rel':'stylesheet'}
+		%title
+			- block title
+			: Ben Bergstein: JavaScript, Python, PHP and HTML/CSS Expert; Software Engineer.
+	%body#body
+		#container.row-fluid
+			#branding.span3
+				.row-fluid
+					.span1 &nbsp;
+					.span11
+						%h1 Ben Bergstein
+						%h4 Software Engineer 
+				.row-fluid
+					.span1 &nbsp;
+					.span11
+						%ul#skills.unstyled
+							%li
+								%code JavaScript
+								%span.badge.badge-success Addict
+							%li
+								%code Python
+								%span.badge Enthusiast
+							%li
+								%code PHP
+								%span.badge.badge-important Acrobat
+							%li
+								%code HTML + CSS
+								%span.badge.badge-inverse Artiste
+							%li
+								%code Hummus
+								%span.badge.badge-warning Lover
+				.row-fluid
+					.span1
+						&nbsp;
+					.span5
+			#page-content.span7
+				%nav#page-nav
+					%ul#primary.nav.nav-tabs
+						%li
+							%a{'href':'/'}
+								Latest
+						%li
+							%a{'href':'/blog/2012/i-was-writer/'}
+								Personal Statement
+					- if page_nav
+						%ul#secondary.nav.nav-tabs
+							- for item in page_nav
+								%li
+									%a{'href':'{{ item.href }}'}
+										{{ item.name }}
+					- else
+						%div.nav-filler
+				%header
+					- if title
+						%h1.page-header {{ title }}
+					- elif article
+						%h1.page-header {{ article.title }}
+					- else
+						%h1.page-header from mind import thoughts.latest 
+				- block content
+				%footer
+					- block footer
+			%nav#right-nav.span2
+				.row-fluid
+					.span12
+					- block right_nav
+						%h6 Recent Posts
+						%ul.unstyled
+							- get_articles 1 to 5 as archives
+								- for archive in archives
+									%li
+										%p
+											%a{'href': '{{ archive.get_absolute_url }}'}
+												{{ archive.title }}
+											%h6.pull-left
+												{{ archive.publish_date|naturalday }}
+											&nbsp;by 
+											%em.author
+												%a{'href':'{% url articles_by_author article.author.username %}'}
+													{{ archive.author.username }}
+										- include 'articles/tags.html' with tags=archive.tags.all
+				.row-fluid
+					.span12
+						%h6 Find me elsewhere
+						%ul.unstyled
+							%li
+								%p
+									Github - 
+									%a{'href':'https://github.com/benastan'} benastan
+								%p
+									Twitter -
+									%a{'href':'http://twitter.com/#!/benbergstein'} @benbergstein
+								%p
+									LinkedIn - 
+									%a{'href':'http://www.linkedin.com/pub/ben-bergstein/22/167/7a7'} profile
+								%p
+									%a{'href':'http://stackoverflow.com/users/544000/benastan'}
+										%img{'src':'http://stackoverflow.com/users/flair/544000.png','alt':'profile for benastan at Stack Overflow, Q&amp;A for professional and enthusiast programmers','title':'profile for benastan at Stack Overflow, Q&amp;A for professional and enthusiast programmers'}
+				.row-fluid
+					.span12#professional-work
+						%h6 Professional Work
+						%ul.unstyled
+							%li
+								%a{'href': 'http://www.updater.com/moving-checklist'}
+									Updater's Smooth Move
+								%p.while-at
+									while at updater
+								%p
+									An interactive tool that helps new-movers keep their move organized.
+									.badges
+										%span.badge.badge-info
+											Backbone.js
+										&nbsp; 
+										%span.badge.badge-info
+											HTML/CSS
+							%li
+								%a{'href': 'http://www.updater.com'}
+									'Recent Moves' Visualization
+								%p.while-at
+									while at updater
+								%p
+									An animation of recent moves by users of the Updater Change of Address platform.
+									.badges
+										%span.badge.badge-info
+											Backbone.js
+										&nbsp; 
+										%span.badge.badge-info
+											Google Maps API
+										&nbsp;
+										%span.badge.badge-info
+											d3
+							%li
+								%a{'href': 'http://www.seatow.com'}
+									Sea Tow Redesign
+								%p.while-at
+									while at analog method
+								%p
+									I lead development of the 2011 redesign.
+									.badges
+										%span.badge.badge-info
+											PHP 
+										&nbsp; 
+										%span.badge.badge-info
+											Drupal 
+										&nbsp; 
+										%span.badge.badge-info
+											JavaScript 
+										&nbsp; 
+										%span.badge.badge-info
+											Google Maps API 
+							%li
+								%a{'href': 'http://apps.facebook.com/houseofcolor'}
+									Lanc&ocirc;me's House of Color
+								%p.while-at
+									while at analog method
+								%p
+									A facebook application showcasing Lanc&ocirc;me's new line of eye make-up. 
+									.badges
+										%span.badge.badge-info
+											JavaScript
+										&nbsp; 
+										%span.badge.badge-info
+											Facebook API
+										&nbsp; 
+							%li
+								%a{'href': 'http://barbie.tumblr.com'}
+									Barbie for President Tumblr Infographic
+								%p.while-at
+									while at analog method
+								%p
+									Poll &amp; Infographic. encouraging barbie lovers to be inspired, be informed, and be confident.
+									.badges
+										%span.badge.badge-info
+											django
+										&nbsp; 
+										%span.badge.badge-info
+											Backbone.js
+										&nbsp; 
+				.row-fluid
+					.span12#personal-projects
+						%h6 Personal Projects
+						%ul.unstyled
+							%li
+								%a
+									CSS Audit
+								%p
+									Online platform for examining and optimizing your web application's CSS.
+									.badges
+										%span.badge.badge-info
+											django
+										&nbsp; 
+										%span.badge.badge-info
+											Backbone.js
+										&nbsp; 
+										%span.badge.badge-info
+											Twitter bootstrap
+										&nbsp; 
+										%span.badge.badge-info
+											JavaScript 
+										&nbsp; 
+										%span.badge.badge-info
+											HTML + CSS
+							%li
+								%a{'href':'http://benjaminbergstein.com/dpla/'}
+									Harvard Metadata Search Interface
+								%p
+									An simple, online interface I threw together for searching the over 12M records released in April 2012.
+									.badges
+										%span.badge.badge-info
+											Backbone.js
+										&nbsp; 
+										%span.badge.badge-info
+											Harvard Metadata API
+		%script{'type':'text/javascript','src':'/static/js/jquery.js'}
+		%script{'type':'text/javascript','src':'/static/js/prettify.js'}
+		%script{'type':'text/javascript','src':'/static/js/bootstrap-button.js'}
+		%script{'type':'text/javascript','src':'/static/js/bootstrap-tab.js'}
+		%script{'type':'text/javascript','src':'/static/js/base.js'}
+		- block extra-head
+

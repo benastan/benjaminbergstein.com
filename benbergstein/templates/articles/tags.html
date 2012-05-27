@@ -1,0 +1,8 @@
+<div class='badges'>
+	{% for tag in tags %}
+		<a class='badge badge-info' href='{% url articles_display_tag tag %}'>
+			{{ tag }}
+		</a>
+		&nbsp;
+	{% endfor %}
+</div>

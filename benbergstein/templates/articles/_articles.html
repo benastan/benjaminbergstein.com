@@ -1,0 +1,26 @@
+{% load i18n humanize %}
+<li>
+	<h2 class='title'>
+		<a href='{{ article.get_absolute_url }}' title='{{ article.title }}'>
+			{{ article.title }}
+		</a>
+	</h2>
+	<div class='article-meta'>
+		<h6 class='pull-left'>
+			{{ article.publish_date|naturalday }}
+		</h6>
+		&nbsp;by
+		<em class='author'>
+			<a href='{% url articles_by_author article.author.username %}'>
+				{{ article.author.username }}
+			</a>
+		</em>
+	</div>
+	<div class='article-content'>
+		{{ article.teaser|safe }}
+		<a href='{{ article.get_absolute_url }}'>
+			Read more &rarr;
+		</a>
+	</div>
+	{% include 'articles/tags.html' with tags=article.tags.all %}
+</li>

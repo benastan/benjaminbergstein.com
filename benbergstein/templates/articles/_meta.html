@@ -1,0 +1,17 @@
+{% load i18n humanize %}
+<div class='article-meta'>
+	{% if article.get_previous_article %}
+		<p class='pull-left'>
+			<a href='{{ article.get_previous_article.get_absolute_url }}'>
+				&larr; {{ article.get_previous_article.title }}
+			</a>
+		</p>
+	{% endif %}
+	{% if article.get_next_article %}
+		<p class='pull-right'>
+			<a href='{{ article.get_next_article.get_absolute_url }}'>
+				{{ article.get_next_article.title }} &rarr;
+			</a>
+		</p>
+	{% endif %}
+</div>
